@@ -27,4 +27,4 @@ run:
   net: --net=host
   persist: -d
   ports: "-p 0.0.0.0:5353:5353/tcp -p 0.0.0.0:5353:5353/udp"
-  logging: --log-driver=syslog
+  logging: --log-driver=syslog --log-opt tag=unbound
