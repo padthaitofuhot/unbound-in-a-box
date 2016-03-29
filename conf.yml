@@ -1,0 +1,20 @@
+# Configuration options
+#
+# You can override anything you see in the "conf:" tree in box/box.yml here!
+# Additionally, there are a few properties you can set here that do not have
+# defaults in box.yml that you may find useful.
+#
+# APK REPOS
+# Uncomment to use your favorite APK mirror
+# Only add the URL pointing the mirror root, everything else is added automatically!
+# For example, if you set the following:
+#alpine_mirror: http://cache.local/alpine
+# it will resolve to:
+# http://cache.local/alpine/v3.3/{main,community}
+# -AND-
+# http://cache.local/alpine/edge/{main,community,testing}
+#
+# PORT
+# We assume we're running on the same host as dnsmasq-in-a-box and acting as a resolver for it,
+# but if unbound is your only resolver you should look in run.yml and adjust the ports: line
+# accordingly.

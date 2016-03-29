@@ -1,0 +1,30 @@
+name: unbound
+home: /opt/unbound
+subdirs: conf.d
+conf: unbound.conf
+
+conf:
+# Sane configuration defaults go here.
+# Anything in this section can be overridden by conf.yml!
+  prefetch_records: yes
+  prefetch_dnskey: yes
+  hide_identity: yes
+  harden_dns_data: yes
+  0x20_bit: yes
+
+build:
+  alpine_version: 3.3
+  alpine_mirror: http://dl-cdn.alpinelinux.org/alpine
+  packages: unbound
+  expose: 5353 5353/udp
+  entrypoint: /usr/sbin/unbound
+  cmd: -c/opt/unbound.conf
+
+run:
+# Sane docker run defaults go here.
+# Anything in this section can be overridden by run.yml!
+  console:
+  net: --net=host
+  persist: -d
+  ports: "-p 0.0.0.0:5353:5353/tcp -p 0.0.0.0:5353:5353/udp"
+  logging: --log-driver=syslog

@@ -1,0 +1,12 @@
+# Docker run overrides
+#
+# You can override anything you see in the "run:" tree in box/box.yml here!
+# Normally you don't want to do this, but sometimes it's helpful, such as
+# when you'd like to map a service to a different host port.
+# Example:
+# ports: "-p 0.0.0.0:80:80/tcp -p 0.0.0.0:80:80/udp"
+#
+# PORT
+# We assume we're running on the same host as dnsmasq-in-a-box and acting as a resolver for it,
+# but if unbound is your only resolver you probably want to uncomment the line below.
+#ports: "-p 0.0.0.0:53:5353/tcp -p 0.0.0.0:53:5353/udp"
