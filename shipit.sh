@@ -65,7 +65,7 @@ fi
 
 verbose "Generating container run script in:"
 o "${box_home}/run.sh"
-umask 077; echo "docker run ${run_console} ${run_persist} -v ${box_home}:/opt ${run_volumes} ${run_capabilities} ${run_net} ${run_ports} ${run_logging} --name ${box_name} ${box_name}" >${box_home}/run.sh
+umask 077; echo "docker run ${run_console} ${run_persist} -v ${box_home}:/opt ${run_volumes} ${run_capabilities} ${run_net} ${run_ports} ${run_logging} ${run_restart} --name ${box_name} ${box_name}" >${box_home}/run.sh
 chmod +x ${box_home}/run.sh; umask 022
 
 if [ -f box/boxconfig.sh ]; then

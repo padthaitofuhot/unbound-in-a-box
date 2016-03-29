@@ -26,5 +26,6 @@ run:
   console:
   net: --net=host
   persist: -d
+  restart: --restart=always
   ports: "-p 0.0.0.0:5353:5353/tcp -p 0.0.0.0:5353:5353/udp"
   logging: --log-driver=syslog --log-opt tag=unbound
